@@ -1,6 +1,7 @@
 package com.udacity.quakereport;
 
 public class EarthQuake {
+    // magnitude of the earthquake
     private double mMagnitude;
     private String mRegion;
     private String mLocation;
