@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,39 +22,40 @@
     <!-- Accent color of the app -->
     <color name="colorAccent">#10CAC9</color>
 
-    <!-- Cor para um terremoto com magnitude 0 a 2 -->
-    <color name="magnitude0_2">#4A7BA7</color>
+    <!-- Color for an earthquake with magnitude 0 and 2 -->
+    <color name="magnitude1">#4A7BA7</color>
 
-    <!-- Cor para um terremoto com magnitude entre 2 a 3 -->
-    <color name="magnitude2_3">#04B4B3</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 2 and 3 -->
+    <color name="magnitude2">#04B4B3</color>
 
-    <!-- Cor para um terremoto com magnitude entre 3 a 4 -->
-    <color name="magnitude3_4">#10CAC9</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 3 and 4 -->
+    <color name="magnitude3">#10CAC9</color>
 
-    <!-- Cor para um terremoto com magnitude entre 4 a 5 -->
-    <color name="magnitude4_5">#F5A623</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 4 and 5 -->
+    <color name="magnitude4">#F5A623</color>
 
-    <!-- Cor para um terremoto com magnitude entre 5 a 6 -->
-    <color name="magnitude5_6">#FF7D50</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 5 and 6 -->
+    <color name="magnitude5">#FF7D50</color>
 
-    <!-- Cor para um terremoto com magnitude entre 6 a 7 -->
-    <color name="magnitude6_7">#FC6644</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 6 and 7 -->
+    <color name="magnitude6">#FC6644</color>
 
-    <!-- Cor para um terremoto com magnitude entre 7 a 8 -->
-    <color name="magnitude7_8">#E75F40</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 7 and 8 -->
+    <color name="magnitude7">#E75F40</color>
 
-    <!-- Cor para um terremoto com magnitude entre 8 a 9 -->
-    <color name="magnitude8_9">#E13A20</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 8 and 9 -->
+    <color name="magnitude8">#E13A20</color>
 
-    <!-- Cor para um terremoto com magnitude entre 9 a 10 -->
-    <color name="magnitude9_10">#D93218</color>
+    <!-- Magnitude circle color for an earthquake with magnitude between 9 and 10 -->
+    <color name="magnitude9">#D93218</color>
 
-    <!-- Cor para um terremoto com magnitude acima de 10 -->
+    <!-- Magnitude circle color for an earthquake with magnitude over 10 -->
     <color name="magnitude10plus">#C03823</color>
 
-    <!-- Cor do texto para os detalhes do terremoto no item de lista -->
+    <!-- Text color for the details of the earthquake in the list item -->
     <color name="textColorEarthquakeDetails">#B4BAC0</color>
 
-    <!-- Cor do texto para a localização primária do terremoto no item de lista -->
+    <!-- Text color for the primary location of the earthquake in the list item -->
     <color name="textColorEarthquakeLocation">#2B3D4D</color>
+
 </resources>

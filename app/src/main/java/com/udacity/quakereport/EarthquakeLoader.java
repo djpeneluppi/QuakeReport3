@@ -2,8 +2,6 @@ package com.udacity.quakereport;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
 import java.util.List;
@@ -42,10 +40,7 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<EarthQuake>> {
         }
         // Realiza requisição de rede, decodifica a resposta,
         // e extrai uma lista de earthquakes.
-        //List<EarthQuake> earthQuakes =
-
-
-    return null;
-
+        List<EarthQuake> earthquakes = QueryUtils.fetchEarthquakeData(mUrl);
+        return earthquakes;
     }
 }
