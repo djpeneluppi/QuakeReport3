@@ -1,6 +1,10 @@
 package com.udacity.quakereport;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,7 +17,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<EarthQuake> {
     private static final String TAG = "MainActivity";
 
     @Override
@@ -44,5 +48,21 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             }
         });
+    }
+
+    @NonNull
+    @Override
+    public Loader<EarthQuake> onCreateLoader(int id, @Nullable Bundle args) {
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(@NonNull Loader<EarthQuake> loader, EarthQuake data) {
+
+    }
+
+    @Override
+    public void onLoaderReset(@NonNull Loader<EarthQuake> loader) {
+
     }
 }
