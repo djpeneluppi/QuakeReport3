@@ -1,6 +1,7 @@
 package com.udacity.quakereport;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.loader.content.AsyncTaskLoader;
 
@@ -27,6 +28,8 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<EarthQuake>> {
 
     @Override
     public void onStartLoading() {
+        Log.v(LOG_TAG, "TEST: EarthquakeLoader onStartLoading called...");
+
         forceLoad();
     }
 
@@ -35,12 +38,13 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<EarthQuake>> {
  * Está e uma thread de background.
  */    @Override
     public List<EarthQuake> loadInBackground() {
-        if(mUrl == null) {
+    Log.v(LOG_TAG, "TEST: EarthquakeLoader loadInBackground called...");
+
+    if(mUrl == null) {
              return null;
         }
         // Realiza requisição de rede, decodifica a resposta,
         // e extrai uma lista de earthquakes.
-        List<EarthQuake> earthquakes = QueryUtils.fetchEarthquakeData(mUrl);
-        return earthquakes;
+        return QueryUtils.fetchEarthquakeData(mUrl);
     }
 }

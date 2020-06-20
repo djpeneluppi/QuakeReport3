@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.v(LOG_TAG, "TEST: MainActivity onCreate called...");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
@@ -106,9 +108,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             // Initialize the loader. Pass in the int ID constant defined above and pass in null for
             // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
             // because this activity implements the LoaderCallbacks interface).
-//            loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this);
             loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this);
-            Log.v(LOG_TAG, "initLoader");
+            Log.v(LOG_TAG, "TEST: MainActivity initLoader called...");
         } else {
             // Otherwise, display error
             // First, hide loading indicator so error message will be visible
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @NonNull
     @Override
     public Loader<List<EarthQuake>> onCreateLoader(int id, Bundle args) {
-        Log.v(LOG_TAG, "onCreateLoader");
+        Log.v(LOG_TAG, "TEST: MainActivity onCreateLoader called...");
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String minMagnitude = sharedPrefs.getString(
@@ -149,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoadFinished(@NonNull Loader<List<EarthQuake>> loader, List<EarthQuake> earthquakes) {
-        Log.v(LOG_TAG, "onLoadFinished");
+        Log.v(LOG_TAG, "TEST: MainActivity onLoadFinished called...");
 
         // Hide loading indicator because the data has been loaded
         loadingIndicator.setVisibility(View.GONE);
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoaderReset(@NonNull Loader<List<EarthQuake>> loader) {
-        Log.v(LOG_TAG, "onLoaderReset");
+        Log.v(LOG_TAG, "TEST: MainActivity onLoaderReset called...");
 
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();

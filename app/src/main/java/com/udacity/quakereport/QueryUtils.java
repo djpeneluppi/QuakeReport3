@@ -24,7 +24,7 @@ import java.util.List;
  * Helper methods related to requesting and receiving earthquake data from USGS.
  */
 public class QueryUtils {
-    private static final String TAG = QueryUtils.class.getName();
+    private static final String LOG_TAG = QueryUtils.class.getName();
 
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
@@ -38,6 +38,8 @@ public class QueryUtils {
      * Query the USGS dataset and return a list of {@link EarthQuake} objects.
      */
     public static List<EarthQuake> fetchEarthquakeData(String requestUrl) {
+        Log.v(LOG_TAG, "TEST: QueryUtils fetchEarthquakeData called...");
+
         // Create URL object
         URL url = createUrl(requestUrl);
 
@@ -46,14 +48,13 @@ public class QueryUtils {
         try {
             jsonResponse = makeHttpRequest(url);
         } catch (IOException e) {
-            Log.e(TAG, "Problem making the HTTP request.", e);
+            Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
         // Extract relevant fields from the JSON response and create a list of {@link Earthquake}s
-        List<EarthQuake> earthQuakes = extractFeatureFromJson(jsonResponse);
 
         // Return the list of {@link Earthquake}s
-        return earthQuakes;
+        return extractFeatureFromJson(jsonResponse);
     }
 
     /**
@@ -64,7 +65,7 @@ public class QueryUtils {
         try {
             url = new URL(stringUrl);
         } catch (MalformedURLException e) {
-            Log.e(TAG, "Problem building the URL ", e);
+            Log.e(LOG_TAG, "Problem building the URL ", e);
         }
         return url;
     }
@@ -95,10 +96,10 @@ public class QueryUtils {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
             } else {
-                Log.e(TAG, "Error response code: " + urlConnection.getResponseCode());
+                Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
